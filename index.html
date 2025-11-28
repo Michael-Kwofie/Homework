@@ -3,85 +3,168 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Michael — Personal Page</title>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <!-- Minimal base styles -->
+  <title>Michael Kwofie</title>
+
+  <!-- Minimal, clean styling -->
   <style>
-    :root { --fg:#1a1a1a; --bg:#ffffff; --accent:#1f6feb; --muted:#666; }
-    html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; }
-    main { max-width:720px; margin:40px auto; padding:0 20px; }
-    header h1 { margin:0 0 0.25rem; font-size:2rem; }
-    header p { margin:0; color:var(--muted); }
-    nav a { color:var(--accent); text-decoration:none; margin-right:1rem; }
-    nav a:hover { text-decoration:underline; }
-    section { margin:2rem 0; }
-    img.hero { width:100%; max-width:640px; height:auto; border-radius:8px; display:block; }
-    code, kbd { background:#f6f8fa; padding:0.1rem 0.3rem; border-radius:4px; }
-    footer { margin-top:3rem; color:var(--muted); font-size:0.9rem; }
+    :root {
+      --bg: #fafafa;
+      --fg: #1a1a1a;
+      --muted: #555;
+      --accent: #0a66c2; /* LinkedIn-ish blue */
+      --maxw: 720px;
+    }
+    html, body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: var(--maxw);
+      margin: 5rem auto 3rem;
+      padding: 0 1.25rem;
+    }
+    header {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1.25rem;
+      align-items: center;
+    }
+    img.profile {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      background: #ddd;
+    }
+    h1 {
+      font-size: 2rem;
+      margin: 0 0 0.25rem;
+      letter-spacing: 0.2px;
+    }
+    p {
+      margin: 0.25rem 0 0.75rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none; /* no underlines */
+    }
+    a:hover {
+      text-decoration: underline; /* subtle hover affordance */
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .section-title {
+      margin-top: 2rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      margin-top: 0.75rem;
+    }
+    code {
+      background: #f0f0f0;
+      padding: 0.15rem 0.35rem;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.95rem;
+    }
+    footer {
+      margin-top: 2.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
   </style>
+
   <!-- MathJax for LaTeX rendering -->
   <script>
     window.MathJax = {
-      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\
+
+\[', '\\]
+
+']]
+      },
       svg: { fontCache: 'global' }
     };
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
+
 <body>
   <main>
     <header>
-      <h1>Michael</h1>
-      <p>Minimal, clear, and intentional.</p>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#math">Math</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <!-- Replace src with your actual image file or URL -->
+      <img class="profile" src="profile.jpg" alt="Portrait of Michael Kwofie" />
+      <div>
+        <h1>Michael Kwofie</h1>
+        <p class="meta">Graduate Teaching Assistant &amp; M.S. Mathematics, Northern Arizona University</p>
+        <p class="meta">B.Sc. Mathematics, University of Cape Coast, Ghana</p>
+        <p>
+          <a href="mailto:mk2878@nau.edu">mk2878@nau.edu</a> ·
+          <!-- Replace with your exact LinkedIn URL -->
+          <a href="https://www.linkedin.com/in/michaael-kwofie" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
     </header>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>I build clean solutions that show reasoning—code, visuals, and documents aligned with purpose.</p>
-      <!-- Image: update src to a file you add in /assets/michael.jpg or an external URL -->
-      <img class="hero" src="assets/michael.jpg" alt="Portrait or landscape" />
-      <p>Prefer minimal systems. If you want to see more, visit my GitHub profile:
-        <a href="https://github.com/username" target="_blank" rel="noopener">github.com/username</a>.
+    <div class="section-title">About</div>
+    <div class="card">
+      <p>
+        I study pure and applied mathematics with an emphasis on clear reasoning, minimal presentation,
+        and teaching through example. I’m currently a Graduate Teaching Assistant at NAU, refining both
+        my research interests and instructional practice.
       </p>
-    </section>
+    </div>
 
-    <section id="math">
-      <h2>Math</h2>
-      <p>Inline example: The quadratic formula solves \\(ax^2 + bx + c = 0\\) via
-        \\(x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\).</p>
-      <p>Display example:</p>
-      <p>\
+    <div class="section-title">Featured link</div>
+    <div class="card">
+      <p>
+        <strong>Portfolio:</strong> <a href="#" aria-label="Portfolio link">Add your site or project link here</a>
+      </p>
+    </div>
+
+    <div class="section-title">Math: First Isomorphism Theorem (groups)</div>
+    <div class="card">
+      <p>
+        Let \\(\\varphi : G \\to H\\) be a group homomorphism with kernel \\(\\ker \\varphi\\).
+        Then the quotient group \\(G / \\ker \\varphi\\) is isomorphic to the image of \\(\\varphi\\):
+      </p>
+      <p>
+        \
 
 \[
-        \\int_{0}^{\\infty} e^{-\\lambda x} \\, dx = \\frac{1}{\\lambda}, \\quad \\lambda > 0
-      \\]
+          G / \\ker \\varphi \\;\\cong\\; \\operatorname{im}(\\varphi).
+        \\]
 
-</p>
-      <p>Combinatorics identity:</p>
-      <p>\
 
-\[
-        \\sum_{k=0}^{n} \\binom{n}{k} = 2^n
-      \\]
-
-</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">your-handle</a></p>
-    </section>
+      </p>
+      <p class="meta">
+        Equivalently, there exists a unique isomorphism \\(\\psi : G / \\ker \\varphi \\to \\operatorname{im}(\\varphi)\\)
+        such that \\(\\psi(g \\ker \\varphi) = \\varphi(g)\\) for all \\(g \\in G\\).
+      </p>
+    </div>
 
     <footer>
-      <p>&copy; <span id="y"></span> Michael</p>
-      <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+      © <span id="year"></span> Michael Kwofie
     </footer>
   </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
