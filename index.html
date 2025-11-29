@@ -51,10 +51,10 @@
     }
     a {
       color: var(--accent);
-      text-decoration: none; /* no underlines */
+      text-decoration: none;
     }
     a:hover {
-      text-decoration: underline; /* subtle hover affordance */
+      text-decoration: underline;
     }
     .meta {
       color: var(--muted);
@@ -62,16 +62,20 @@
     }
     .section-title {
       margin-top: 2rem;
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: 0.2px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: var(--accent); /* make section titles blue */
+      border-left: 4px solid var(--accent);
+      padding-left: 0.5rem;
     }
     .card {
       background: white;
       border-radius: 10px;
       padding: 1rem 1.25rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
       margin-top: 0.75rem;
+      border-top: 3px solid var(--accent); /* blue accent line */
     }
     code {
       background: #f0f0f0;
@@ -84,6 +88,7 @@
       margin-top: 2.5rem;
       color: var(--muted);
       font-size: 0.9rem;
+      text-align: center;
     }
   </style>
 
@@ -114,38 +119,44 @@
         <p class="meta">B.Sc. Mathematics, University of Cape Coast, Ghana</p>
         <p>
           <a href="mailto:mk2878@nau.edu">mk2878@nau.edu</a> ·
-          <a href="https://www.linkedin.com/in/michaelkwofie" rel="noopener">LinkedIn</a> .
+          <a href="https://www.linkedin.com/in/michaelkwofie" rel="noopener">LinkedIn</a> ·
           <a href="https://www.facebook.com/michael.kwofie.140" rel="noopener">Facebook</a>
         </p>
       </div>
     </header>
 
     <h2 class="section-title">ABOUT</h2>
+    <p>
+      I am an MS Mathematics student and a Graduate Teaching Assistant at Northern Arizona University.
+      My research interests lie in Applied Mathematics, with a particular focus on Partial Differential Equation and Numerical Analysis.
+      I completed my undergraduate degree in Mathematics at the University of Cape Coast, Ghana, where I served as a Teaching Assistant.
+    </p>
+
+    <h2 class="section-title">MATH PROBLEM</h2>
+    <div class="card">
+      <p><strong>Fundamental Theorem of Calculus</strong></p>
       <p>
-        I am an MS Mathematics student and a Graduate Teaching Assistant at Northern Arizona University.
-        My research interests lie in Applied Mathematics, with a particular focus on Partial Differential Equation and Numerical Analysis.
-        I completed my undergraduate degree in Mathematics at the University of Cape Coast, Ghana, where I served as a Teaching Assistant.
+        If you integrate a function and then differentiate, you get the original function back:
+        
+
+\[
+        \frac{d}{dx}\left( \int_a^x f(t)\, dt \right) = f(x).
+        \]
+
+
+      </p>
+      <p>
+        To compute a definite integral, subtract the values of an antiderivative at the endpoints:
+        
+
+\[
+        \int_a^b f(x)\, dx = F(b) - F(a),
+        \]
+
+
+        where \( F'(x) = f(x) \).
       </p>
     </div>
-
-    <div class="section-title">MATH PROBLEM</div>
-<div class="card">
-
- <p><strong>Fundamental Theorem of Calculus</strong></p>
-
-<p>
-If you integrate a function and then differentiate, you get the original function back:
-\[
-\frac{d}{dx}\left( \int_a^x f(t)\, dt \right) = f(x).
-\]
-
-To compute a definite integral, subtract the values of an antiderivative at the endpoints:
-\[
-\int_a^b f(x)\, dx = F(b) - F(a),
-\]
-where \( F'(x) = f(x) \).
-  </p>
-</div>
 
     <footer>
       © <span id="year"></span> Michael Kwofie
